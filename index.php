@@ -44,48 +44,48 @@ require_once "models/modelo.php";
 
 //tabla Pais
 require_once "controllers/paiscontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 //tabla patrocinio
 require_once "controllers/patrociniocontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 //tabla Personal
 require_once "controllers/personalcontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 
 //tabla Posicion
 require_once "controllers/posicioncontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 //tabla Registro
 require_once "controllers/registrocontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 //tabla Registro Evento
 require_once "controllers/registroeventocontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 
 //tabla Rol
 require_once "controllers/rolcontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 
 //tabla Tipo Evento
 require_once "controllers/tipoeventocontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 
 //tabla Usuario
 require_once "controllers/usuariocontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 
 //tabla Voluntario
 require_once "controllers/voluntariocontroller.php";
-require_once "modelo/areamodelo.php";
+require_once "models/areamodelo.php";
 
 
 //para ver si esta la conexion
