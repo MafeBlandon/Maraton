@@ -10,11 +10,14 @@ class ControladorEvento{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Evento";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("NombreEvento" => $_POST[""],
+							"FechaInicio" => $_POST[""],
+							"Valor" => $_POST[""],
+							"ParticipantesMax" => $_POST[""],
+							"FK_MaratonID" => $_POST[""],
+							"FK_TipoEventoID" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +33,7 @@ class ControladorEvento{
 
 	static public function ctrSeleccionarRegistroEvento($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_Evento";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +58,15 @@ class ControladorEvento{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_Evento";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("EventoID" => $_POST[""],
+							"NombreEvento" => $_POST[""],
+				           "FechaInicio" => $_POST[""],
+				           "Valor" => $_POST[""],
+						   "ParticipantesMax" => $_POST[""],
+						   "FK_MaratonID" => $_POST[""],
+						   "FK_TipoEventoID" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +84,7 @@ class ControladorEvento{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Evento";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

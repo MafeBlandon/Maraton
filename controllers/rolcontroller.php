@@ -10,11 +10,9 @@ class ControladorRol{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Rol";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("Rol" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +28,7 @@ class ControladorRol{
 
 	static public function ctrSeleccionarRegistroRol($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_Rol";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +53,10 @@ class ControladorRol{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_Rol";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("RolID" => $_POST[""],
+							"Rol" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +74,7 @@ class ControladorRol{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Rol";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

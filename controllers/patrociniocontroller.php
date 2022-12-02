@@ -10,11 +10,11 @@ class ControladorPatrocinio{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Patrocinio";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("NombrePatrocinador" => $_POST[""],
+							"Monto" => $_POST[""],
+							"FK_RegistroID" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +30,7 @@ class ControladorPatrocinio{
 
 	static public function ctrSeleccionarRegistroPatrocinio($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_Patrocinio";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +55,12 @@ class ControladorPatrocinio{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_Patrocinio";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("PatrocinioID" => $_POST[""],
+							"NombrePatrocinador" => $_POST[""],
+				           "Monto" => $_POST[""],
+				           "FK_RegistroID" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +78,7 @@ class ControladorPatrocinio{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Patrocinio";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

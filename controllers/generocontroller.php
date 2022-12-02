@@ -1,21 +1,18 @@
 <?php
 
-class ControladorRegistroEvento{
+class ControladorVoluntario{
 
 	/*=============================================
 	Registro
 	=============================================*/
 
-	static public function ctrRegistroRegistroEven(){
+	static public function ctrRegistroVoluntario(){
 
 		if(isset($_POST[""])){
 
-			$tabla = "TBL_RegistroEvento";
+			$tabla = "TBL_Genero";
 
-			$datos = array("NumDorsal" => $_POST[""],
-							"TiempoCarrera" => $_POST[""],
-							"FK_RegistroID" => $_POST[""],
-							"FK_EventoID" => $_POST[""]);
+			$datos = array("Genero" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -29,9 +26,9 @@ class ControladorRegistroEvento{
 	Seleccionar Registros
 	=============================================*/
 
-	static public function ctrSeleccionarRegistroRegistroEven($item, $valor){
+	static public function ctrSeleccionarRegistroVoluntario($item, $valor){
 
-		$tabla = "TBL_RegistroEvento";
+		$tabla = "TBL_Genero";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -43,7 +40,7 @@ class ControladorRegistroEvento{
      /*=============================================
 	Actualizar Registro
 	=============================================*/
-	static public function ctrActualizarRegistroRegistroEven(){
+	static public function ctrActualizarRegistroVoluntario(){
 
 		if(isset($_POST[""])){
 
@@ -56,13 +53,10 @@ class ControladorRegistroEvento{
 				$password = $_POST[""];
 			}
 
-			$tabla = "TBL_RegistroEvento";
+			$tabla = "TBL_Genero";
 
-			$datos = array("RegistroID" => $_POST[""],
-							"NumDorsal" => $_POST[""],
-				           "TiempoCarrera" => $_POST[""],
-				           "FK_RegistroID" => $_POST[""],
-				           "FK_EventoID" => $_POST[""]);
+			$datos = array("idFALTA" => $_POST[""],
+							"Genero" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -76,11 +70,11 @@ class ControladorRegistroEvento{
 	/*=============================================
 	Eliminar Registro
 	=============================================*/
-	public function ctrEliminarRegistroRegistroEven(){
+	public function ctrEliminarRegistroVoluntario(){
 
 		if(isset($_POST[""])){
 
-			$tabla = "TBL_RegistroEvento";
+			$tabla = "TBL_Genero";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

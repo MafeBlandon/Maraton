@@ -10,11 +10,12 @@ class ControladorHojaTiempo{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_HojaTiempo";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("FechaInicio" => $_POST[""],
+				           "FechaFinal" => $_POST[""],
+						   "ValorPagar" => $_POST[""],
+						   "FK_PersonalID" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +31,7 @@ class ControladorHojaTiempo{
 
 	static public function ctrSeleccionarRegistroHojaTiem($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_HojaTiempo";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +56,13 @@ class ControladorHojaTiempo{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_HojaTiempo";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("HojaID" => $_POST[""],
+							"FechaInicio" => $_POST[""],
+							"FechaFinal" => $_POST[""],
+							"ValorPagar" => $_POST[""],
+							"FK_PersonalID" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +80,7 @@ class ControladorHojaTiempo{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_HojaTiempo";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

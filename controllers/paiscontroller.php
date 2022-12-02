@@ -10,11 +10,10 @@ class ControladorPais{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Pais";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("NombrePais" => $_POST[""],
+				           "BanderaPais" => $_POST[""]);//ES IMG
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +29,7 @@ class ControladorPais{
 
 	static public function ctrSeleccionarRegistroPais($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_Pais";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,9 +54,9 @@ class ControladorPais{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_Pais";
 
-			$datos = array("id" => $_POST[""],
+			$datos = array("CodigoPais" => $_POST[""],
 							"" => $_POST[""],
 				           "" => $_POST[""],
 				           "" => $password);
@@ -78,7 +77,7 @@ class ControladorPais{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Pais";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

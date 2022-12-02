@@ -10,11 +10,15 @@ class ControladorPersonal{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Personal";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("Nombres" => $_POST[""],
+				           "Apellidos" => $_POST[""],
+						   "FechaNacimiento" => $_POST[""],
+						   "Genero" => $_POST[""],
+						   "Comentarios" => $_POST[""],
+				           "FK_RolID" => $_POST[""],
+						   "FK_PosicionID" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +34,7 @@ class ControladorPersonal{
 
 	static public function ctrSeleccionarRegistroPersonal($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_Personal";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +59,16 @@ class ControladorPersonal{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_Personal";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("PersonalID" => $_POST[""],
+							"Nombres" => $_POST[""],
+				           "Apellidos" => $_POST[""],
+				           "FechaNacimiento" => $_POST[""],
+						   "Genero" => $_POST[""],
+						   "Comentarios" => $_POST[""],
+						   "FK_RolID" => $_POST[""],
+						   "FK_PosicionID" => $_POST[""],);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +86,7 @@ class ControladorPersonal{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Personal";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

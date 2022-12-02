@@ -10,11 +10,12 @@ class ControladorCorredor{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Corredor";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("FechaNacimiento" => $_POST[""],
+				           "FK_Genero" => $_POST[""],
+				           "FK_Email" => $_POST[""],
+						   "FK_PaisID" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +31,7 @@ class ControladorCorredor{
 
 	static public function ctrSeleccionarRegistroCorredor($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_Corredor";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +56,13 @@ class ControladorCorredor{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_Corredor";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("CorredorID" => $_POST[""],
+							"FechaNacimiento" => $_POST[""],
+							"FK_Genero" => $_POST[""],
+							"FK_Email" => $_POST[""],
+							"FK_PaisID" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +80,7 @@ class ControladorCorredor{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_Corredor";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

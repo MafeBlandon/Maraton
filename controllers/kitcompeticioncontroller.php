@@ -2,6 +2,11 @@
 
 class ControladorKitCompetencia{
 
+
+	 
+
+
+
 	/*=============================================
 	Registro
 	=============================================*/
@@ -10,11 +15,10 @@ class ControladorKitCompetencia{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_KitCompeticion";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("OpcionKit " => $_POST[""],
+				           "ValorKit" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +34,7 @@ class ControladorKitCompetencia{
 
 	static public function ctrSeleccionarRegistroKitCompe($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_KitCompeticion";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +59,11 @@ class ControladorKitCompetencia{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_KitCompeticion";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("KitID" => $_POST[""],
+							"OpcionKit" => $_POST[""],
+				           "ValorKit" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +81,7 @@ class ControladorKitCompetencia{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_KitCompeticion";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);

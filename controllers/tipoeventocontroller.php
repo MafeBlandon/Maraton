@@ -10,11 +10,9 @@ class ControladorTipoEvento{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_TipoEvento";
 
-			$datos = array("" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $_POST[""]);
+			$datos = array("NombreTipoEvento" => $_POST[""]);
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 
@@ -30,7 +28,7 @@ class ControladorTipoEvento{
 
 	static public function ctrSeleccionarRegistroTipoEven($item, $valor){
 
-		$tabla = "";
+		$tabla = "TBL_TipoEvento";
 
 		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
@@ -55,12 +53,10 @@ class ControladorTipoEvento{
 				$password = $_POST[""];
 			}
 
-			$tabla = "";
+			$tabla = "TBL_TipoEvento";
 
-			$datos = array("id" => $_POST[""],
-							"" => $_POST[""],
-				           "" => $_POST[""],
-				           "" => $password);
+			$datos = array("TipoEventoID" => $_POST[""],
+							"NombreTipoEvento" => $_POST[""]);
 
 			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
@@ -78,7 +74,7 @@ class ControladorTipoEvento{
 
 		if(isset($_POST[""])){
 
-			$tabla = "";
+			$tabla = "TBL_TipoEvento";
 			$valor = $_POST[""];
 
 			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
