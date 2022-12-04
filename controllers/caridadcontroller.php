@@ -11,7 +11,7 @@ class ControladorCaridad{
 
 	static public function ctrRegistroCaridad(){
 
-		if(isset($_POST[""])){
+		if(isset($_POST["registroNombreCaridad"])){
 
 			$tabla = "TBL_Caridad";
 
@@ -19,7 +19,7 @@ class ControladorCaridad{
 				           "DescripcionCaridad" => $_POST["registroDescripcionCaridad"],
 				           "LogoCaridad" => addslashes(file_get_contents ($_FILES["registroLogoCaridad"]["tmp_name"])));//es IMG
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloCaridad::mdlCaridad($tabla, $datos);
 
 			return $respuesta;
 
@@ -35,7 +35,7 @@ class ControladorCaridad{
 
 		$tabla = "TBL_Caridad";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloCaridad::mdlSeleccionarCaridad($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -64,7 +64,7 @@ class ControladorCaridad{
 							"NombreCaridad" => $_POST[""],
 				           "DescripcionCaridad" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloCaridad::mdlActualizarCaridad($tabla, $datos);
 
 			return $respuesta;
 
@@ -83,7 +83,7 @@ class ControladorCaridad{
 			$tabla = "TBL_Caridad";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloCaridad::mdlEliminarCaridad($tabla, $valor);
 
 			if($respuesta == "ok"){
 

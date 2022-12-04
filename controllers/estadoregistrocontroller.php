@@ -15,7 +15,7 @@ class ControladorEstadoRegistro{
 
 			$datos = array("EstadoRegistro" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloEstadoRegistro::mdlEstadoRegistro($tabla, $datos);
 
 			return $respuesta;
 
@@ -31,7 +31,7 @@ class ControladorEstadoRegistro{
 
 		$tabla = "TBL_EstadoRegistro";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloEstadoRegistro::mdlSeleccionarEstadoRegistro($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -59,7 +59,7 @@ class ControladorEstadoRegistro{
 			$datos = array("EstadoID" => $_POST[""],
 							"EstadoRegistro" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloEstadoRegistro::mdlActualizarEstadoRegistro($tabla, $datos);
 
 			return $respuesta;
 
@@ -78,7 +78,7 @@ class ControladorEstadoRegistro{
 			$tabla = "TBL_EstadoRegistro";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloEstadoRegistro::mdlEliminarRegistro($tabla, $valor);
 
 			if($respuesta == "ok"){
 

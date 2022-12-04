@@ -57,11 +57,11 @@
 
           <?php
 
-               $registros = ControladorRegistro::ctrtraerRegistro();
+               $registroCaridad = ControladorCaridad::ctrRegistroCaridad();
  
  
  
-               if($registros == "ok")
+               if($registroCaridad == "ok")
                {
                     echo '<script>
 

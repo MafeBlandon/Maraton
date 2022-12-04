@@ -19,7 +19,7 @@ class ControladorCorredor{
 				           "FK_Email" => $_POST[""],
 						   "FK_PaisID" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloCorredor::mdlCorredor($tabla, $datos);
 
 			return $respuesta;
 
@@ -35,7 +35,7 @@ class ControladorCorredor{
 
 		$tabla = "TBL_Corredor";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloCorredor::mdlSeleccionarCorredor($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -66,7 +66,7 @@ class ControladorCorredor{
 							"FK_Email" => $_POST[""],
 							"FK_PaisID" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloCorredor::mdlActualizarCorredor($tabla, $datos);
 
 			return $respuesta;
 
@@ -85,7 +85,7 @@ class ControladorCorredor{
 			$tabla = "TBL_Corredor";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloCorredor::mdlEliminarCorredor($tabla, $valor);
 
 			if($respuesta == "ok"){
 

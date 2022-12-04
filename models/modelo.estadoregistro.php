@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once "conexion.php";  
+require_once "config/conexion.php";  
 
 
 class ModeloEstadoRegistro {
@@ -44,6 +44,9 @@ class ModeloEstadoRegistro {
         $stmt->close();
         $stmt = null;
     }
+
+
+    
     static public function mdlEliminarRegistro($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE estadoID = :estadoID");
