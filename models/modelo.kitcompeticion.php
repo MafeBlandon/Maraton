@@ -40,4 +40,24 @@ class ModelosKitCompeticion {
         $stmt->close();
         $stmt = null;
     }
+    static public function mdlEliminarKitCompeticion($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE kitID = :kitID");
+    
+        $stmt->bindParam(":kitID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

@@ -40,5 +40,25 @@ class ModelosGenero{
         $stmt->close();
         $stmt = null;
     }
+    static public function mdlEliminarGenero($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE generoID = :generoID");
+    
+        $stmt->bindParam(":generoID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 
 }

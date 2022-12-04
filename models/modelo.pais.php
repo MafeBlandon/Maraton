@@ -41,5 +41,24 @@ class ModeloPais {
         $stmt->close();
         $stmt = null;	
     }
-
+    static public function mdlEliminarPais($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE PaisID = :PaisID");
+    
+        $stmt->bindParam(":PaisID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

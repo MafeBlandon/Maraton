@@ -43,4 +43,24 @@ class ModeloVoluntario {
         $stmt->close();
         $stmt = null;
     }
+    static public function mdlEliminarVoluntario($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE VoluntarioID = :VoluntarioID");
+    
+        $stmt->bindParam(":VoluntarioID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

@@ -43,5 +43,24 @@ class ModeloMaraton {
         $stmt->close();
         $stmt = null;
     }
-
+    static public function mdlEliminarMaraton($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE maratonID = :maratonID");
+    
+        $stmt->bindParam(":maratonID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

@@ -40,4 +40,24 @@ class ModeloRol {
         $stmt->close();
         $stmt = null;
     }
+    static public function mdlEliminarRol($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE rollID = :rollID");
+    
+        $stmt->bindParam(":rollID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    
 }

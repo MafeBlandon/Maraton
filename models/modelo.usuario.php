@@ -43,5 +43,24 @@ class ModelosUsuario {
         $stmt->close();
         $stmt = null;
     }
-
+    static public function mdlEliminarUsuario($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE UsuarioID = :UsuarioID");
+    
+        $stmt->bindParam(":UsuarioID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

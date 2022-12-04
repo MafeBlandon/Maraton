@@ -45,4 +45,24 @@ class ModeloEvento{
         $stmt->close();
         $stmt = null;
     }
+    static public function mdlEliminarEvento($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE EventoID = :EventoID");
+    
+        $stmt->bindParam(":EventoID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

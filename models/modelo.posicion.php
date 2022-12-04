@@ -41,5 +41,24 @@ class ModeloPosicion {
         $stmt->close();
         $stmt = null;	
     }
-
+    static public function mdlEliminarPosicion($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE PosicionID = :PosicionID");
+    
+        $stmt->bindParam(":PosicionID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

@@ -42,4 +42,25 @@ class ModeloCaridad {
         $stmt->close();
         $stmt = null;	
     }
+
+    static public function mdlEliminarCaridad($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE CaridadID = :CaridadID");
+    
+        $stmt->bindParam(":CaridadID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

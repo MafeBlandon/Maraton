@@ -40,4 +40,24 @@ class ModeloEstadoRegistro {
         $stmt->close();
         $stmt = null;
     }
+    static public function mdlEliminarRegistro($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE estadoID = :estadoID");
+    
+        $stmt->bindParam(":estadoID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

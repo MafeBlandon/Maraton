@@ -41,5 +41,24 @@ class ModeloPatrocinio {
         $stmt->close();
         $stmt = null;	
     }
-
+    static public function mdlEliminarPatrocinio($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE PatrocinioID = :PatrocinioID");
+    
+        $stmt->bindParam(":PatrocinioID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }

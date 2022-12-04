@@ -44,4 +44,24 @@ class ModeloCorredor {
         $stmt = null;
     }
 
+    static public function mdlEliminarCorredor($tabla, $valor){
+	
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE CorredorID = :CorredorID");
+    
+        $stmt->bindParam(":CorredorID", $valor, PDO::PARAM_STR);
+    
+        if($stmt->execute()){
+    
+            return "ok";
+    
+        }else{
+    
+            print_r(Conexion::conectar()->errorInfo());
+    
+        }
+    
+        $stmt->close();
+    
+        $stmt = null;	
+    }
 }
