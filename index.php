@@ -19,7 +19,7 @@ require_once "models/modelo.estadoregistro.php";
 
 
 //tabla evento
-require_once "controllers/eventocontroller.php.php";
+require_once "controllers/eventocontroller.php";
 require_once "models/modelo.evento.php";
 
 //tabla genero
