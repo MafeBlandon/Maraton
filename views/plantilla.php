@@ -50,18 +50,17 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="nav nav-justified py-1 nav-pills">
+            <ul class="nav nav-justified py-1 nav-pills">pages
+               <?php if(isset($_GET["pages"])):?>
 
-               <?php if(isset($_GET["paginas"])):?>
-
-                    <?php if($_GET["paginas"] == "inicio"):?>
+                    <?php if($_GET["pages"] == "inicio"):?>
                          <li class="nav-item">
-                         <a class="nav-link active" href="index.php?paginas=inicio">Inicio</a>
+                         <a class="nav-link active" href="index.php?pages=inicio">Inicio</a>
                          </li>
 
                     <?php else: ?>
                          <li class="nav-item">
-                         <a class="nav-link " href="index.php?paginas=inicio">Inicio</a>
+                         <a class="nav-link " href="index.php?pages=inicio">Inicio</a>
                          </li>
 
                     <?php endif ?>
@@ -70,14 +69,14 @@
 
 
 
-                    <?php if($_GET["paginas"] == "ingreso"):?>
+                    <?php if($_GET["pages"] == "ingreso"):?>
                          <li class="nav-item">
-                         <a class="nav-link active" href="index.php?paginas=ingreso">Ingreso</a>
+                         <a class="nav-link active" href="index.php?pages=ingreso">Ingreso</a>
                          </li>
 
                     <?php else: ?>
                          <li class="nav-item">
-                              <a class="nav-link" href="index.php?paginas=ingreso">Ingreso</a>
+                              <a class="nav-link" href="index.php?pages=ingreso">Ingreso</a>
                          </li>
 
                     <?php endif ?>
@@ -86,13 +85,13 @@
 
 
 
-                    <?php if($_GET["paginas"] == "registro"):?>
+                    <?php if($_GET["pages"] == "registro"):?>
                          <li class="nav-item">
-                              <a class="nav-link active" href="index.php?paginas=registro">Registro</a>
+                              <a class="nav-link active" href="index.php?pages=registro">Registro</a>
                          </li>
                     <?php else: ?>
                          <li class="nav-item">
-                              <a class="nav-link" href="index.php?paginas=registro">Registro</a>
+                              <a class="nav-link" href="index.php?pages=registro">Registro</a>
                          </li>
 
                     <?php endif ?>
@@ -100,14 +99,14 @@
                     <!--FIN REGISTRO-->
 
 
-                    <?php if($_GET["paginas"] == "inventario"):?>
+                    <?php if($_GET["pages"] == "inventario"):?>
                          <li class="nav-item">
-                              <a class="nav-link active" href="index.php?paginas=rol">Registro Rol</a>
+                              <a class="nav-link active" href="index.php?pages=rol">Registro Rol</a>
                          </li>
 
                     <?php else: ?>
                          <li class="nav-item">
-                              <a class="nav-link" href="index.php?paginas=rol">Registro Rol</a>
+                              <a class="nav-link" href="index.php?pages=rol">Registro Rol</a>
                          </li>
 
                     <?php endif ?>
@@ -115,14 +114,14 @@
                     <!--FIN INVENTARIO-->
 
 
-                    <?php if($_GET["paginas"] == "inventario"):?>
+                    <?php if($_GET["pages"] == "inventario"):?>
                          <li class="nav-item">
-                              <a class="nav-link active" href="index.php?paginas=area">Registro Area</a>
+                              <a class="nav-link active" href="index.php?pages=area">Registro Area</a>
                          </li>
 
                     <?php else: ?>
                          <li class="nav-item">
-                              <a class="nav-link" href="index.php?paginas=area">Registro Area</a>
+                              <a class="nav-link" href="index.php?pages=area">Registro Area</a>
                          </li>
 
                     <?php endif ?>
@@ -131,14 +130,14 @@
 
 
 
-                    <?php if($_GET["paginas"] == "salida"):?>
+                    <?php if($_GET["pages"] == "salida"):?>
                          <li class="nav-item">
-                              <a class="nav-link active" href="index.php?paginas=salida">Salir</a>
+                              <a class="nav-link active" href="index.php?pages=salida">Salir</a>
                          </li>
 
                     <?php else: ?>
                          <li class="nav-item">
-                              <a class="nav-link" href="index.php?paginas=salida">Salir</a>
+                              <a class="nav-link" href="index.php?pages=salida">Salir</a>
                          </li>
 
                     <?php endif ?>
