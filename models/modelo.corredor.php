@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModeloCorredor {
         
     /*=============================================
@@ -44,6 +47,9 @@ class ModeloCorredor {
         $stmt = null;
     }
 
+
+
+    
     static public function mdlEliminarCorredor($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE CorredorID = :CorredorID");

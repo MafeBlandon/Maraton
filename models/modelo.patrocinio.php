@@ -1,5 +1,9 @@
 <?php
 
+
+require_once "conexion.php";  
+
+
 class ModeloPatrocinio {
     /*=============================================
     tabla posicion
@@ -41,6 +45,9 @@ class ModeloPatrocinio {
         $stmt->close();
         $stmt = null;	
     }
+
+
+    
     static public function mdlEliminarPatrocinio($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE PatrocinioID = :PatrocinioID");

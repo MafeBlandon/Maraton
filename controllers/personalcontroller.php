@@ -1,5 +1,7 @@
 <?php
 
+require_once "models/modelo.personal.php";
+
 class ControladorPersonal{
 
 	/*=============================================

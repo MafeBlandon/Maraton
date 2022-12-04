@@ -1,5 +1,9 @@
 <?php
 
+
+require_once "conexion.php";  
+
+
 class ModelosUsuario {
     /*=============================================
     tabla usuario
@@ -43,6 +47,8 @@ class ModelosUsuario {
         $stmt->close();
         $stmt = null;
     }
+
+    
     static public function mdlEliminarUsuario($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE UsuarioID = :UsuarioID");
@@ -64,6 +70,8 @@ class ModelosUsuario {
         $stmt = null;	
     }
     // funcion actualizar 
+
+
 
     static public function mdlActualizarUsuario($tabla, $datos){
         

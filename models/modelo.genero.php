@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModelosGenero{
     
     /*=============================================
@@ -40,6 +43,10 @@ class ModelosGenero{
         $stmt->close();
         $stmt = null;
     }
+
+
+
+    
     static public function mdlEliminarGenero($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE generoID = :generoID");

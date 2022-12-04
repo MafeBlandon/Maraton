@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModeloMaraton {
         
     /*=============================================
@@ -43,6 +46,9 @@ class ModeloMaraton {
         $stmt->close();
         $stmt = null;
     }
+
+
+    
     static public function mdlEliminarMaraton($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE maratonID = :maratonID");

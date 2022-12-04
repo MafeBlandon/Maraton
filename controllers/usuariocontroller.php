@@ -1,5 +1,7 @@
 <?php
 
+require_once "models/modelo.usuario.php";
+
 class ControladorUsuario{
 
 	/*=============================================

@@ -1,5 +1,9 @@
 <?php 
 
+
+require_once "conexion.php";  
+
+
 class ModeloEstadoRegistro {
     
     /*=============================================
@@ -60,6 +64,9 @@ class ModeloEstadoRegistro {
     
         $stmt = null;	
     }
+
+
+    
     // funcion actualizar
     static public function mdlActualizarEstadoRegistro($tabla, $datos){
         

@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModelosKitCompeticion {
     /*=============================================
     tabla kitcompeticion
@@ -40,6 +43,9 @@ class ModelosKitCompeticion {
         $stmt->close();
         $stmt = null;
     }
+
+
+    
     static public function mdlEliminarKitCompeticion($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE kitID = :kitID");

@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModeloHojatiempo {
         
     /*=============================================
@@ -43,6 +46,9 @@ class ModeloHojatiempo {
         $stmt->close();
         $stmt = null;
     }
+
+
+    
     static public function mdlEliminarHojaTiempo($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE HojaID = :HojaID");

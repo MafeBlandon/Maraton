@@ -1,5 +1,9 @@
 <?php
 
+require_once "conexion.php";  
+
+
+
 class ModeloEvento{
     
     /*=============================================
@@ -45,6 +49,10 @@ class ModeloEvento{
         $stmt->close();
         $stmt = null;
     }
+
+
+
+    
     static public function mdlEliminarEvento($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE EventoID = :EventoID");

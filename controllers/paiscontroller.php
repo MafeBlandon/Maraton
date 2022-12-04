@@ -1,5 +1,7 @@
 <?php
 
+require_once "models/modelo.pais.php";
+
 class ControladorPais{
 
 	/*=============================================

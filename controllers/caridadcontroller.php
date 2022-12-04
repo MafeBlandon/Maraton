@@ -1,12 +1,8 @@
 <?php
 
+require_once "models/modelo.caridad.php";
+
 class ControladorCaridad{
-
-
-
- 
-
- 
 
 
 	/*=============================================
@@ -19,9 +15,9 @@ class ControladorCaridad{
 
 			$tabla = "TBL_Caridad";
 
-			$datos = array("NombreCaridad " => $_POST[""],
-				           "DescripcionCaridad" => $_POST[""],
-				           "LogoCaridad" => $_POST[""]);//es IMG
+			$datos = array("NombreCaridad " => $_POST["registroNombreCaridad"],
+				           "DescripcionCaridad" => $_POST["registroDescripcionCaridad"],
+				           "LogoCaridad" => addslashes(file_get_contents ($_FILES["registroLogoCaridad"]["tmp_name"])));//es IMG
 
 			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
 

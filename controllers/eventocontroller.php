@@ -1,5 +1,7 @@
 <?php
 
+require_once "models/modelo.evento.php";
+
 class ControladorEvento{
 
 	/*=============================================

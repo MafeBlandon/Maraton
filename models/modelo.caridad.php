@@ -1,4 +1,5 @@
 <?php
+require_once "conexion.php";  
 
 
 class ModeloCaridad {
@@ -43,6 +44,14 @@ class ModeloCaridad {
         $stmt = null;	
     }
 
+
+
+
+
+
+
+    
+
     static public function mdlEliminarCaridad($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE CaridadID = :CaridadID");
@@ -63,6 +72,9 @@ class ModeloCaridad {
     
         $stmt = null;	
     }
+
+
+
      // funcion actualizar
 
     static public function mdlActualizarCaridad($tabla, $datos){

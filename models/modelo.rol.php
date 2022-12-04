@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModeloRol {
     
     /*=============================================
@@ -40,6 +43,9 @@ class ModeloRol {
         $stmt->close();
         $stmt = null;
     }
+
+
+
     static public function mdlEliminarRol($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE rollID = :rollID");
@@ -61,6 +67,8 @@ class ModeloRol {
         $stmt = null;	
     }
 
+
+    
     static public function mdlActualizarRol($tabla, $datos){
         
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET rol=:rol WHERE rolID = :rolID");

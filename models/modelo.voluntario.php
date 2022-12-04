@@ -1,5 +1,9 @@
 <?php
 
+
+require_once "conexion.php";  
+
+
 class ModeloVoluntario {
     
     /*=============================================
@@ -32,6 +36,7 @@ class ModeloVoluntario {
 
     }
 
+
     // funcion mostrar
 
     static public function mdlSeleccionarVoluntario($tabla){
@@ -43,6 +48,9 @@ class ModeloVoluntario {
         $stmt->close();
         $stmt = null;
     }
+
+
+
     static public function mdlEliminarVoluntario($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE VoluntarioID = :VoluntarioID");
@@ -65,6 +73,8 @@ class ModeloVoluntario {
     }
     // funcion actualizar 
 
+
+    
     static public function mdlActualizarVoluntario($tabla, $datos){
         
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET Nombres=:Nombres, Apellidos=:Apellidos, fk_PaisID=:fk_PaisID, fk_Genero=:fk_Genero WHERE VoluntarioID = :VoluntarioID");

@@ -1,4 +1,5 @@
 <?php
+require_once "models/modelo.estadoregistro.php";
 
 class ControladorEstadoRegistro{
 

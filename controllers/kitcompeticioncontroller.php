@@ -1,10 +1,8 @@
 <?php
+require_once "models/modelo.kitcompeticion.php";
+
 
 class ControladorKitCompetencia{
-
-
-	 
-
 
 
 	/*=============================================

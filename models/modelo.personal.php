@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModeloPersonal{
     
     /*=============================================
@@ -46,6 +49,9 @@ class ModeloPersonal{
         $stmt->close();
         $stmt = null;
     }
+
+
+
     static public function mdlEliminarPersonal($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE PersonalID = :PersonalID");
@@ -66,6 +72,10 @@ class ModeloPersonal{
     
         $stmt = null;	
     }
+
+
+
+    
     static public function mdlActualizarPersonal($tabla, $datos){
         
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET Nombres=:Nombres, Apellidos=:Apellidos, FechaNacimiento=:FechaNacimiento, Genero=:Genero, Comentarios=:Comentarios, fk_RolID=:fk_RolID, fk_PosicionID=:fk_PosicionID WHERE PersonalID = :PersonalID");

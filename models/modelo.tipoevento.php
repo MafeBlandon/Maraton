@@ -1,5 +1,8 @@
 <?php
 
+require_once "conexion.php";  
+
+
 class ModeloTipoEvento {
     /*=============================================
     tabla TipoEvento
@@ -39,6 +42,9 @@ class ModeloTipoEvento {
         $stmt->close();
         $stmt = null;
     }
+
+
+
     static public function mdlEliminarTipoEvento($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE TipoEventoID = :TipoEventoID");
@@ -61,6 +67,8 @@ class ModeloTipoEvento {
     }
     // funcion actualizar 
 
+
+    
     static public function mdlActualizarTipoEvento($tabla, $datos){
         
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NombreTipoEvento=:NombreTipoEvento WHERE TipoEventoID = :TipoEventoID");

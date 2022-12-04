@@ -1,5 +1,9 @@
 <?php
 
+require_once "conexion.php";  
+
+
+
 class ModeloRegistroEvento {
         
     /*=============================================
@@ -43,6 +47,9 @@ class ModeloRegistroEvento {
         $stmt->close();
         $stmt = null;
     }
+
+
+
     static public function mdlEliminarRegistroEvento($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE RegistroID = :RegistroID");
@@ -63,6 +70,8 @@ class ModeloRegistroEvento {
     
         $stmt = null;	
     }
+
+    
 
     // funcion actualizar
     static public function mdlActualizarRegistroEvento($tabla, $datos){

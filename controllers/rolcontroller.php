@@ -1,5 +1,7 @@
 <?php
 
+require_once "models/modelo.rol.php";
+
 class ControladorRol{
 
 	/*=============================================

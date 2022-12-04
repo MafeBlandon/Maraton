@@ -1,5 +1,9 @@
 <?php
 
+
+require_once "conexion.php";  
+
+
 class ModeloPosicion {
     /*=============================================
     tabla posicion
@@ -41,6 +45,9 @@ class ModeloPosicion {
         $stmt->close();
         $stmt = null;	
     }
+
+
+
     static public function mdlEliminarPosicion($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE PosicionID = :PosicionID");
@@ -61,6 +68,9 @@ class ModeloPosicion {
     
         $stmt = null;	
     }
+
+
+    
     static public function mdlActualizarPosicion($tabla, $datos){
         
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NombrePosicion=:NombrePosicion, DescripcionPosicion=:DescripcionPosicion, TarifaPago=:TarifaPago WHERE PosicionID = :PosicionID");

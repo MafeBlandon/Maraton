@@ -1,5 +1,7 @@
 <?php
 
+require_once "models/modelo.patrocinio.php";
+
 class ControladorPatrocinio{
 
 	/*=============================================

@@ -1,5 +1,9 @@
 <?php
 
+require_once "conexion.php";  
+
+
+
 class ModeloPais {
 
     /*=============================================
@@ -41,6 +45,8 @@ class ModeloPais {
         $stmt->close();
         $stmt = null;	
     }
+
+    
     static public function mdlEliminarPais($tabla, $valor){
 	
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE PaisID = :PaisID");
