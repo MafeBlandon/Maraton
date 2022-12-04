@@ -20,7 +20,7 @@ class ControladorRegistroEvento{
 							"FK_RegistroID" => $_POST[""],
 							"FK_EventoID" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloRegistroEvento::mdlRegistroEvento($tabla, $datos);
 
 			return $respuesta;
 
@@ -36,7 +36,7 @@ class ControladorRegistroEvento{
 
 		$tabla = "TBL_RegistroEvento";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloRegistroEvento::mdlSeleccionarRegistroEvento($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -67,7 +67,7 @@ class ControladorRegistroEvento{
 				           "FK_RegistroID" => $_POST[""],
 				           "FK_EventoID" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloRegistroEvento::mdlActualizarRegistroEvento($tabla, $datos);
 
 			return $respuesta;
 
@@ -86,7 +86,7 @@ class ControladorRegistroEvento{
 			$tabla = "TBL_RegistroEvento";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloRegistroEvento::mdlEliminarRegistroEvento($tabla, $valor);
 
 			if($respuesta == "ok"){
 

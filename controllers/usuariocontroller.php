@@ -21,7 +21,7 @@ class ControladorUsuario{
 						   "FK_RolID" => $_POST[""]
 						);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModelosUsuario::mdlUsuario($tabla, $datos);
 
 			return $respuesta;
 
@@ -37,7 +37,7 @@ class ControladorUsuario{
 
 		$tabla = "TBL_Usuario";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModelosUsuario::mdlSeleccionarUsuario($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -69,7 +69,7 @@ class ControladorUsuario{
 						   "Apellido" => $_POST[""],
 						   "FK_RolID" => $_POST[""],);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModelosUsuario::mdlActualizarUsuario($tabla, $datos);
 
 			return $respuesta;
 
@@ -88,7 +88,7 @@ class ControladorUsuario{
 			$tabla = "TBL_Usuario";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModelosUsuario::mdlEliminarUsuario($tabla, $valor);
 
 			if($respuesta == "ok"){
 

@@ -18,7 +18,7 @@ class ControladorPosicion{
 				           "DescripcionPosicion" => $_POST[""],
 				           "TarifaPago" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloPosicion::mdlPosicion($tabla, $datos);
 
 			return $respuesta;
 
@@ -34,7 +34,7 @@ class ControladorPosicion{
 
 		$tabla = "TBL_Posicion";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloPosicion::mdlSeleccionarPosicion($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -64,7 +64,7 @@ class ControladorPosicion{
 				           "DescripcionPosicion" => $_POST[""],
 						   "TarifaPago" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloPosicion::mdlActualizarPosicion($tabla, $datos);
 
 			return $respuesta;
 
@@ -83,7 +83,7 @@ class ControladorPosicion{
 			$tabla = "TBL_Posicion";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloPosicion::mdlEliminarPosicion($tabla, $valor);
 
 			if($respuesta == "ok"){
 

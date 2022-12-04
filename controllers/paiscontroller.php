@@ -17,7 +17,7 @@ class ControladorPais{
 			$datos = array("NombrePais" => $_POST[""],
 				           "BanderaPais" => $_POST[""]);//ES IMG
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloPais::mdlPais($tabla, $datos);
 
 			return $respuesta;
 
@@ -33,7 +33,7 @@ class ControladorPais{
 
 		$tabla = "TBL_Pais";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloPais::mdlSeleccionarPais($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -63,7 +63,7 @@ class ControladorPais{
 				           "" => $_POST[""],
 				           "" => $password);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloPais::mdlActualizarPais($tabla, $datos);
 
 			return $respuesta;
 
@@ -82,7 +82,7 @@ class ControladorPais{
 			$tabla = "TBL_Pais";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloPais::mdlEliminarPais($tabla, $valor);
 
 			if($respuesta == "ok"){
 

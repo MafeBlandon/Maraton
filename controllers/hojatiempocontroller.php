@@ -19,7 +19,7 @@ class ControladorHojaTiempo{
 						   "ValorPagar" => $_POST[""],
 						   "FK_PersonalID" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloHojatiempo::mdlHojatiempo($tabla, $datos);
 
 			return $respuesta;
 
@@ -35,7 +35,7 @@ class ControladorHojaTiempo{
 
 		$tabla = "TBL_HojaTiempo";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloHojatiempo::mdlSeleccionarHojatiempo($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -66,7 +66,7 @@ class ControladorHojaTiempo{
 							"ValorPagar" => $_POST[""],
 							"FK_PersonalID" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloHojatiempo::mdlActualizarHojaTiempo($tabla, $datos);
 
 			return $respuesta;
 
@@ -85,7 +85,7 @@ class ControladorHojaTiempo{
 			$tabla = "TBL_HojaTiempo";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloHojatiempo::mdlEliminarHojaTiempo($tabla, $valor);
 
 			if($respuesta == "ok"){
 

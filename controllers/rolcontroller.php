@@ -16,7 +16,7 @@ class ControladorRol{
 
 			$datos = array("Rol" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloRol::mdlRol($tabla, $datos);
 
 			return $respuesta;
 
@@ -32,7 +32,7 @@ class ControladorRol{
 
 		$tabla = "TBL_Rol";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloRol::mdlSeleccionarRol($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -60,7 +60,7 @@ class ControladorRol{
 			$datos = array("RolID" => $_POST[""],
 							"Rol" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloRol::mdlActualizarRol($tabla, $datos);
 
 			return $respuesta;
 
@@ -79,7 +79,7 @@ class ControladorRol{
 			$tabla = "TBL_Rol";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloRol::mdlEliminarRol($tabla, $valor);
 
 			if($respuesta == "ok"){
 

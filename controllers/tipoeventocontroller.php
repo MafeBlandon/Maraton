@@ -16,7 +16,7 @@ class ControladorTipoEvento{
 
 			$datos = array("NombreTipoEvento" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloTipoEvento::mdlTipoEvento($tabla, $datos);
 
 			return $respuesta;
 
@@ -32,7 +32,7 @@ class ControladorTipoEvento{
 
 		$tabla = "TBL_TipoEvento";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloTipoEvento::mdlSeleccionarTipoEvento($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -60,7 +60,7 @@ class ControladorTipoEvento{
 			$datos = array("TipoEventoID" => $_POST[""],
 							"NombreTipoEvento" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloTipoEvento::mdlActualizarTipoEvento($tabla, $datos);
 
 			return $respuesta;
 
@@ -79,7 +79,7 @@ class ControladorTipoEvento{
 			$tabla = "TBL_TipoEvento";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloTipoEvento::mdlEliminarTipoEvento($tabla, $valor);
 
 			if($respuesta == "ok"){
 

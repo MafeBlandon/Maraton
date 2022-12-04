@@ -66,6 +66,8 @@ class ModelosKitCompeticion {
     
         $stmt = null;	
     }
+
+    
     // funcion actualizar
     static public function mdlActualizarKitcompeticion($tabla, $datos){
         

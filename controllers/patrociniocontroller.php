@@ -18,7 +18,7 @@ class ControladorPatrocinio{
 							"Monto" => $_POST[""],
 							"FK_RegistroID" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloPatrocinio::mdlPatrocinio($tabla, $datos);
 
 			return $respuesta;
 
@@ -34,7 +34,7 @@ class ControladorPatrocinio{
 
 		$tabla = "TBL_Patrocinio";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloPatrocinio::mdlSeleccionarPatrocinio($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -64,7 +64,7 @@ class ControladorPatrocinio{
 				           "Monto" => $_POST[""],
 				           "FK_RegistroID" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloPatrocinio::mdlActualizarPatrocinio($tabla, $datos);
 
 			return $respuesta;
 
@@ -83,7 +83,7 @@ class ControladorPatrocinio{
 			$tabla = "TBL_Patrocinio";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloPatrocinio::mdlEliminarPatrocinio($tabla, $valor);
 
 			if($respuesta == "ok"){
 

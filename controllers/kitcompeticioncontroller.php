@@ -18,7 +18,7 @@ class ControladorKitCompetencia{
 			$datos = array("OpcionKit " => $_POST[""],
 				           "ValorKit" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModelosKitCompeticion::mdlKitcompeticion($tabla, $datos);
 
 			return $respuesta;
 
@@ -34,7 +34,7 @@ class ControladorKitCompetencia{
 
 		$tabla = "TBL_KitCompeticion";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModelosKitCompeticion::mdlSeleccionarKitcompeticion($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -63,7 +63,7 @@ class ControladorKitCompetencia{
 							"OpcionKit" => $_POST[""],
 				           "ValorKit" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModelosKitCompeticion::mdlActualizarKitcompeticion($tabla, $datos);
 
 			return $respuesta;
 
@@ -82,7 +82,7 @@ class ControladorKitCompetencia{
 			$tabla = "TBL_KitCompeticion";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModelosKitCompeticion::mdlEliminarKitCompeticion($tabla, $valor);
 
 			if($respuesta == "ok"){
 

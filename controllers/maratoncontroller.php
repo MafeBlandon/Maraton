@@ -19,7 +19,7 @@ class ControladorMaraton{
 							"NombreCelebracion" => $_POST[""],
 							"FK_CodigoPaisID" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloMaraton::mdlMaraton($tabla, $datos);
 
 			return $respuesta;
 
@@ -35,7 +35,7 @@ class ControladorMaraton{
 
 		$tabla = "TBL_Maraton";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloMaraton::mdlSeleccionarMaraton($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -66,7 +66,7 @@ class ControladorMaraton{
 				           "NombreCelebracion" => $_POST[""],
 						   "FK_CodigoPaisID" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloMaraton::mdlActualizarMaraton($tabla, $datos);
 
 			return $respuesta;
 
@@ -85,7 +85,7 @@ class ControladorMaraton{
 			$tabla = "TBL_Maraton";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloMaraton::mdlEliminarMaraton($tabla, $valor);
 
 			if($respuesta == "ok"){
 

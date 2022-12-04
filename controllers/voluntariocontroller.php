@@ -19,7 +19,7 @@ class ControladorVoluntario{
 				           "FK_CodigoPais" => $_POST[""],
 						   "FK_Genero" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloVoluntario::mdlVoluntario($tabla, $datos);
 
 			return $respuesta;
 
@@ -35,7 +35,7 @@ class ControladorVoluntario{
 
 		$tabla = "TBL_Voluntario";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloVoluntario::mdlSeleccionarVoluntario($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -66,7 +66,7 @@ class ControladorVoluntario{
 				           "FK_CodigoPais" => $_POST[""],
 						   "FK_Genero" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloVoluntario::mdlActualizarVoluntario($tabla, $datos);
 
 			return $respuesta;
 
@@ -85,7 +85,7 @@ class ControladorVoluntario{
 			$tabla = "TBL_Voluntario";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloVoluntario::mdlEliminarVoluntario($tabla, $valor);
 
 			if($respuesta == "ok"){
 

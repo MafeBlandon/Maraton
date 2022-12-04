@@ -22,7 +22,7 @@ class ControladorPersonal{
 				           "FK_RolID" => $_POST[""],
 						   "FK_PosicionID" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModeloPersonal::mdlPersonal($tabla, $datos);
 
 			return $respuesta;
 
@@ -38,7 +38,7 @@ class ControladorPersonal{
 
 		$tabla = "TBL_Personal";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModeloPersonal::mdlSeleccionarPersonal($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -72,7 +72,7 @@ class ControladorPersonal{
 						   "FK_RolID" => $_POST[""],
 						   "FK_PosicionID" => $_POST[""],);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModeloPersonal::mdlActualizarPersonal($tabla, $datos);
 
 			return $respuesta;
 
@@ -91,7 +91,7 @@ class ControladorPersonal{
 			$tabla = "TBL_Personal";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModeloPersonal::mdlEliminarPersonal($tabla, $valor);
 
 			if($respuesta == "ok"){
 

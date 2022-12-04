@@ -15,7 +15,7 @@ class ControladorVoluntario{
 
 			$datos = array("Genero" => $_POST[""]);
 
-			$respuesta = //ModeloFormularios::mdlRegistro($tabla, $datos);
+			$respuesta = ModelosGenero::mdlGenero($tabla, $datos);
 
 			return $respuesta;
 
@@ -31,7 +31,7 @@ class ControladorVoluntario{
 
 		$tabla = "TBL_Genero";
 
-		$respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+		$respuesta = ModelosGenero::mdlSeleccionarGenero($tabla, $item, $valor);
 
 		return $respuesta;
 
@@ -59,7 +59,7 @@ class ControladorVoluntario{
 			$datos = array("idFALTA" => $_POST[""],
 							"Genero" => $_POST[""]);
 
-			$respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+			$respuesta = ModelosGenero::mdlActualizarGenero($tabla, $datos);
 
 			return $respuesta;
 
@@ -78,7 +78,7 @@ class ControladorVoluntario{
 			$tabla = "TBL_Genero";
 			$valor = $_POST[""];
 
-			$respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+			$respuesta = ModelosGenero::mdlEliminarGenero($tabla, $valor);
 
 			if($respuesta == "ok"){
 
