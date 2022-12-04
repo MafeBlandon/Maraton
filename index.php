@@ -1,10 +1,10 @@
 <?php
 
 
-require_once "controlador/plantilla.controlador.php";
+require_once "controllers/plantilla.controlador.php";
 
-require_once "controlador/formularioregistro.controlador.php";
-require_once "modelo/formularioregistro.modelo.php";
+require_once "controllers/formularioregistro.controlador.php";
+require_once "models/formularioregistro.modelo.php";
 
 
 //tabla caridad
