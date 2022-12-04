@@ -23,18 +23,6 @@
 </head>
 <body>
      
-     <div class="container-fluid">
-
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <h3 class="text-center py-3">MI PRIMER PHP</h3>
-     </div>
-
-
-          
-
-
-
-
 
      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
           <div class="container-fluid">
@@ -152,16 +140,16 @@
                   <a class="nav-link" href="index.php?pages=ingreso">Ingreso</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.php?pages=registro">Registro</a>
+                  <a class="nav-link" href="index.php?pages=">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?pages=rol">Registro Rol</a>
+                    <a class="nav-link" href="index.php?pages=">Registro Rol</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="index.php?pages=area">Registro Area</a>
+                    <a class="nav-link" href="index.php?pages=">Registro Area</a>
                   </li>
                <li class="nav-item">
-                    <a class="nav-link" href="index.php?pages=salir">Salir</a>
+                    <a class="nav-link" href="index.php?pages=">Salir</a>
                </li>
                 
               </ul>
@@ -186,12 +174,12 @@
           if(isset($_GET["pages"])){
 
                if($_GET["pages"] == "registro" ||
-               $_GET["pages"] == "ingreso" ||
-               $_GET["pages"] == "inicio" ||
-               $_GET["pages"] == "rol"|| 
-               $_GET["pages"] == "area"|| 
-               $_GET["pages"] == "editar"||
-               $_GET["pages"] == "salida"){
+               $_GET["pages"] == "" ||
+               $_GET["pages"] == "" ||
+               $_GET["pages"] == ""|| 
+               $_GET["pages"] == ""|| 
+               $_GET["pages"] == ""||
+               $_GET["pages"] == ""){
 
                     include "pages/".$_GET["pages"].".php";
 
