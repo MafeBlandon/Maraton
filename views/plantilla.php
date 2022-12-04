@@ -146,22 +146,22 @@
 
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.php?paginas=inicio">Inicio</a>
+                  <a class="nav-link active" href="index.php?pages=inicio">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.php?paginas=ingreso">Ingreso</a>
+                  <a class="nav-link" href="index.php?pages=ingreso">Ingreso</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.php?paginas=registro">Registro</a>
+                  <a class="nav-link" href="index.php?pages=registro">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?paginas=rol">Registro Rol</a>
+                    <a class="nav-link" href="index.php?pages=rol">Registro Rol</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="index.php?paginas=area">Registro Area</a>
+                    <a class="nav-link" href="index.php?pages=area">Registro Area</a>
                   </li>
                <li class="nav-item">
-                    <a class="nav-link" href="index.php?paginas=salir">Salir</a>
+                    <a class="nav-link" href="index.php?pages=salir">Salir</a>
                </li>
                 
               </ul>
@@ -183,26 +183,26 @@
 
           #iseet() determina si unaa ariable esta definida y no es null 
 
-          if(isset($_GET["paginas"])){
+          if(isset($_GET["pages"])){
 
-               if($_GET["paginas"] == "registro" ||
-               $_GET["paginas"] == "ingreso" ||
-               $_GET["paginas"] == "inicio" ||
-               $_GET["paginas"] == "rol"|| 
-               $_GET["paginas"] == "area"|| 
-               $_GET["paginas"] == "editar"||
-               $_GET["paginas"] == "salida"){
+               if($_GET["pages"] == "registro" ||
+               $_GET["pages"] == "ingreso" ||
+               $_GET["pages"] == "inicio" ||
+               $_GET["pages"] == "rol"|| 
+               $_GET["pages"] == "area"|| 
+               $_GET["pages"] == "editar"||
+               $_GET["pages"] == "salida"){
 
-                    include "paginas/".$_GET["paginas"].".php";
+                    include "pages/".$_GET["pages"].".php";
 
 
                }else{
-                    include "paginas/error404.php";
+                    include "pages/error404.php";
                }      
                     
           }else{
 
-               include "paginas/registro.php";
+               include "pages/registro.php";
 
           }
 
