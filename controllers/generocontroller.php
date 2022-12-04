@@ -1,13 +1,13 @@
 <?php
 require_once "models/modelo.genero.php";
 
-class ControladorVoluntario{
+class ControladorGenero{
 
 	/*=============================================
 	Registro
 	=============================================*/
 
-	static public function ctrRegistroVoluntario(){
+	static public function ctrRegistroGenero(){
 
 		if(isset($_POST[""])){
 
@@ -27,7 +27,7 @@ class ControladorVoluntario{
 	Seleccionar Registros
 	=============================================*/
 
-	static public function ctrSeleccionarRegistroVoluntario($item, $valor){
+	static public function ctrSeleccionarRegistroGenero($item, $valor){
 
 		$tabla = "TBL_Genero";
 
@@ -41,7 +41,7 @@ class ControladorVoluntario{
      /*=============================================
 	Actualizar Registro
 	=============================================*/
-	static public function ctrActualizarRegistroVoluntario(){
+	static public function ctrActualizarRegistroGenero(){
 
 		if(isset($_POST[""])){
 
@@ -71,7 +71,7 @@ class ControladorVoluntario{
 	/*=============================================
 	Eliminar Registro
 	=============================================*/
-	public function ctrEliminarRegistroVoluntario(){
+	public function ctrEliminarRegistroGenero(){
 
 		if(isset($_POST[""])){
 

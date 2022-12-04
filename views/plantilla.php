@@ -23,18 +23,6 @@
 </head>
 <body>
      
-     <div class="container-fluid">
-
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <h3 class="text-center py-3">MI PRIMER PHP</h3>
-     </div>
-
-
-          
-
-
-
-
 
      <nav class="navbar navbar-expand-lg navbar-light bg-light ">
           <div class="container-fluid">
@@ -146,22 +134,22 @@
 
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.php?paginas=inicio">Inicio</a>
+                  <a class="nav-link active" href="index.php?pages=inicio">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.php?paginas=ingreso">Ingreso</a>
+                  <a class="nav-link" href="index.php?pages=ingreso">Ingreso</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="index.php?paginas=registro">Registro</a>
+                  <a class="nav-link" href="index.php?pages=">Registro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?paginas=rol">Registro Rol</a>
+                    <a class="nav-link" href="index.php?pages=">Registro Rol</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="index.php?paginas=area">Registro Area</a>
+                    <a class="nav-link" href="index.php?pages=">Registro Area</a>
                   </li>
                <li class="nav-item">
-                    <a class="nav-link" href="index.php?paginas=salir">Salir</a>
+                    <a class="nav-link" href="index.php?pages=">Salir</a>
                </li>
                 
               </ul>
@@ -183,26 +171,26 @@
 
           #iseet() determina si unaa ariable esta definida y no es null 
 
-          if(isset($_GET["paginas"])){
+          if(isset($_GET["pages"])){
 
-               if($_GET["paginas"] == "registro" ||
-               $_GET["paginas"] == "ingreso" ||
-               $_GET["paginas"] == "inicio" ||
-               $_GET["paginas"] == "rol"|| 
-               $_GET["paginas"] == "area"|| 
-               $_GET["paginas"] == "editar"||
-               $_GET["paginas"] == "salida"){
+               if($_GET["pages"] == "registro" ||
+               $_GET["pages"] == "" ||
+               $_GET["pages"] == "" ||
+               $_GET["pages"] == ""|| 
+               $_GET["pages"] == ""|| 
+               $_GET["pages"] == ""||
+               $_GET["pages"] == ""){
 
-                    include "paginas/".$_GET["paginas"].".php";
+                    include "pages/".$_GET["pages"].".php";
 
 
                }else{
-                    include "paginas/error404.php";
+                    include "pages/error404.php";
                }      
                     
           }else{
 
-               include "paginas/registro.php";
+               include "pages/registro.php";
 
           }
 
