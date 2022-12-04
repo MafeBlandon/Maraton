@@ -66,4 +66,32 @@ class ModeloPersonal{
     
         $stmt = null;	
     }
+    static public function mdlActualizarPersonal($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET Nombres=:Nombres, Apellidos=:Apellidos, FechaNacimiento=:FechaNacimiento, Genero=:Genero, Comentarios=:Comentarios, fk_RolID=:fk_RolID, fk_PosicionID=:fk_PosicionID WHERE PersonalID = :PersonalID");
+
+        $stmt->bindParam(":Nombres", $datos["Nombres"], PDO::PARAM_STR);
+        $stmt->bindParam(":Apellidos", $datos["Apellidos"], PDO::PARAM_STR);
+        $stmt->bindParam(":FechaNacimiento", $datos["FechaNacimiento"], PDO::PARAM_STR);
+        $stmt->bindParam(":Genero", $datos["Genero"], PDO::PARAM_STR);
+        $stmt->bindParam(":Comentarios", $datos["Comentarios"], PDO::PARAM_STR);
+        $stmt->bindParam(":fk_RolID", $datos["fk_RolID"], PDO::PARAM_STR);
+        $stmt->bindParam(":fk_PosicionID", $datos["fk_PosicionID"], PDO::PARAM_STR);
+        $stmt->bindParam(":PersonalID", $datos["PersonalID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

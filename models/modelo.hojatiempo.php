@@ -63,4 +63,31 @@ class ModeloHojatiempo {
     
         $stmt = null;	
     }
+    // funcion actualizar
+
+    static public function mdlActualizarHojaTiempo($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET FechaInicio=:FechaInicio, FechaFinal=:FechaFinal, ValorPagar=:ValorPagar, fk_PersonalID=:fk_PersonalID WHERE HojaID = :HojaID");
+
+        $stmt->bindParam(":FechaInicio", $datos["FechaInicio"], PDO::PARAM_STR);
+        $stmt->bindParam(":FechaFinal", $datos["FechaFinal"], PDO::PARAM_STR);
+        $stmt->bindParam(":ValorPagar", $datos["ValorPagar"], PDO::PARAM_STR);
+        $stmt->bindParam(":fk_PersonalID", $datos["fk_PersonalID"], PDO::PARAM_STR);
+        $stmt->bindParam(":HojaID", $datos["HojaID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

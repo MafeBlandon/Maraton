@@ -61,4 +61,29 @@ class ModeloPais {
     
         $stmt = null;	
     }
+    // funcion actualizar
+
+    static public function mdlActualizarPais($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NombrePais=:NombrePais, BanderaPais=:BanderaPais WHERE PaisID = :PaisID");
+
+        $stmt->bindParam(":NombrePais", $datos["NombrePais"], PDO::PARAM_STR);
+        $stmt->bindParam(":BanderaPais", $datos["BanderaPais"], PDO::PARAM_STR);
+        $stmt->bindParam(":PaisID", $datos["PaisID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

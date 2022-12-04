@@ -63,4 +63,32 @@ class ModelosUsuario {
     
         $stmt = null;	
     }
+    // funcion actualizar 
+
+    static public function mdlActualizarUsuario($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET Email=:Email, Contrasena=:Contrasena, Nombre=:Nombre, Apellido=:Apellido, fk_RolID=:fk_RolID WHERE UsuarioID = :UsuarioID");
+
+        $stmt->bindParam(":Email", $datos["Email"], PDO::PARAM_STR);
+        $stmt->bindParam(":Contrasena", $datos["Contrasena"], PDO::PARAM_STR);
+        $stmt->bindParam(":Nombre", $datos["Nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":Apellido", $datos["Apellido"], PDO::PARAM_STR);
+        $stmt->bindParam(":fk_RolID", $datos["fk_RolID"], PDO::PARAM_STR);
+        $stmt->bindParam(":UsuarioID", $datos["UsuarioID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

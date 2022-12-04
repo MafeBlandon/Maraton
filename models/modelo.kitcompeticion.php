@@ -60,4 +60,28 @@ class ModelosKitCompeticion {
     
         $stmt = null;	
     }
+    // funcion actualizar
+    static public function mdlActualizarKitcompeticion($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET opcionKit=:opcionKit, valorKit=:valorKit  WHERE KitID = :KitID");
+
+        $stmt->bindParam(":opcionKit", $datos["opcionKit"], PDO::PARAM_STR);
+        $stmt->bindParam(":valorKit", $datos["valorKit"], PDO::PARAM_STR);
+        $stmt->bindParam(":KitID", $datos["KitID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

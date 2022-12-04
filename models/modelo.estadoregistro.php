@@ -60,4 +60,27 @@ class ModeloEstadoRegistro {
     
         $stmt = null;	
     }
+    // funcion actualizar
+    static public function mdlActualizarEstadoRegistro($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET estadoRegistro=:estadoRegistro WHERE estadoID = :estadoID");
+
+        $stmt->bindParam(":estadoRegistro", $datos["estadoRegistro"], PDO::PARAM_STR);
+        $stmt->bindParam(":estadoID", $datos["estadoID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

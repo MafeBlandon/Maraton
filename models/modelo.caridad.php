@@ -63,4 +63,30 @@ class ModeloCaridad {
     
         $stmt = null;	
     }
+     // funcion actualizar
+
+    static public function mdlActualizarCaridad($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NombreCaridad=:NombreCaridad, Descripcion=:Descripcion, logoCaridad=:logoCaridad WHERE CaridadID = :CaridadID");
+
+        $stmt->bindParam(":NombreCaridad", $datos["NombreCaridad"], PDO::PARAM_STR);
+        $stmt->bindParam(":Descripcion", $datos["Descripcion"], PDO::PARAM_STR);
+        $stmt->bindParam(":logoCaridad", $datos["logoCaridad"], PDO::PARAM_STR);
+        $stmt->bindParam(":CaridadID", $datos["CaridadID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

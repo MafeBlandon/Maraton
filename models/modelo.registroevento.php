@@ -63,4 +63,31 @@ class ModeloRegistroEvento {
     
         $stmt = null;	
     }
+
+    // funcion actualizar
+    static public function mdlActualizarRegistroEvento($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NumDorsal=:NumDorsal, TiempoCarrera=:TiempoCarrera, fk_RegistroID=:fk_RegistroID, fk_EventoID=:fk_EventoID WHERE RegistroID = :RegistroID");
+
+        $stmt->bindParam(":NumDorsal", $datos["NumDorsal"], PDO::PARAM_STR);
+        $stmt->bindParam(":TiempoCarrera", $datos["TiempoCarrera"], PDO::PARAM_STR);
+        $stmt->bindParam(":fk_RegistroID", $datos["fk_RegistroID"], PDO::PARAM_STR);
+        $stmt->bindParam(":fk_EventoID", $datos["fk_EventoID"], PDO::PARAM_STR);
+        $stmt->bindParam(":RegistroID", $datos["RegistroID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

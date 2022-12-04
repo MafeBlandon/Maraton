@@ -61,4 +61,29 @@ class ModeloPatrocinio {
     
         $stmt = null;	
     }
+    // funcion actualizar
+    static public function mdlActualizarPatrocinio($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NombrePatrocinador=:NombrePatrocinador, Monto=:Monto, fk_RegistroID=:fk_RegistroID WHERE PatrocinioID = :PatrocinioID");
+
+        $stmt->bindParam(":NombrePatrocinador", $datos["NombrePatrocinador"], PDO::PARAM_STR);
+        $stmt->bindParam(":Monto", $datos["Monto"], PDO::PARAM_STR);
+        $stmt->bindParam(":fk_RegistroID", $datos["fk_RegistroID"], PDO::PARAM_STR);
+        $stmt->bindParam(":PatrocinioID", $datos["PatrocinioID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

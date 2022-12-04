@@ -61,4 +61,28 @@ class ModeloPosicion {
     
         $stmt = null;	
     }
+    static public function mdlActualizarPosicion($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NombrePosicion=:NombrePosicion, DescripcionPosicion=:DescripcionPosicion, TarifaPago=:TarifaPago WHERE PosicionID = :PosicionID");
+
+        $stmt->bindParam(":NombrePosicion", $datos["NombrePosicion"], PDO::PARAM_STR);
+        $stmt->bindParam(":DescripcionPosicion", $datos["DescripcionPosicion"], PDO::PARAM_STR);
+        $stmt->bindParam(":TarifaPago", $datos["TarifaPago"], PDO::PARAM_STR);
+        $stmt->bindParam(":PosicionID", $datos["PosicionID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

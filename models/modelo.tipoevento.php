@@ -59,4 +59,28 @@ class ModeloTipoEvento {
     
         $stmt = null;	
     }
+    // funcion actualizar 
+
+    static public function mdlActualizarTipoEvento($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET NombreTipoEvento=:NombreTipoEvento WHERE TipoEventoID = :TipoEventoID");
+
+        $stmt->bindParam(":NombreTipoEvento", $datos["NombreTipoEvento"], PDO::PARAM_STR);
+        $stmt->bindParam(":TipoEventoID", $datos["TipoEventoID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 }

@@ -60,5 +60,29 @@ class ModelosGenero{
     
         $stmt = null;	
     }
+    // funcion actualizar 
+
+    static public function mdlActualizarGenero($tabla, $datos){
+        
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET genero=:genero WHERE GeneroID = :GeneroID");
+
+        $stmt->bindParam(":genero", $datos["genero"], PDO::PARAM_STR);
+        $stmt->bindParam(":GeneroID", $datos["GeneroID"], PDO::PARAM_INT);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            print_r(Conexion::conectar()->errorInfo());
+
+        }
+
+        $stmt->close();
+
+        $stmt = null;	
+
+    }
 
 }
