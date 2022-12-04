@@ -63,10 +63,10 @@ class ModeloRol {
 
     static public function mdlActualizarRol($tabla, $datos){
         
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET Rol=:Rol WHERE RolID = :RolID");
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET rol=:rol WHERE rolID = :rolID");
 
-        $stmt->bindParam(":Rol", $datos["Rol"], PDO::PARAM_STR);
-        $stmt->bindParam(":RolID", $datos["RolID"], PDO::PARAM_INT);
+        $stmt->bindParam(":rol", $datos["rol"], PDO::PARAM_STR);
+        $stmt->bindParam(":rolID", $datos["rolID"], PDO::PARAM_INT);
 
         if($stmt->execute()){
 
