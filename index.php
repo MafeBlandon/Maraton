@@ -1,7 +1,7 @@
 <?php
 
 
-require_once "controllers/plantilla.controlador.php";
+require_once("controllers/plantilla.controlador.php");
 
 
 //tabla caridad
@@ -90,3 +90,7 @@ require_once "config/conexion.php";
 
 $conexion = Conexion::conectar();
 echo '<pre'; print_r($conexion); echo "</pre>";
+
+
+$plantilla = new ControladorPlantilla();
+$plantilla -> ctrtraerplantilla();

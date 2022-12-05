@@ -174,7 +174,7 @@
           if(isset($_GET["pages"])){
 
                if($_GET["pages"] == "registro" ||
-               $_GET["pages"] == "" ||
+               $_GET["pages"] == "/caridad/registrocaridad.php" ||
                $_GET["pages"] == "" ||
                $_GET["pages"] == ""|| 
                $_GET["pages"] == ""|| 
